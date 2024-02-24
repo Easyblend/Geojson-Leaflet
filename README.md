@@ -38,7 +38,7 @@ this will start our React Application from the Docker container we just created 
 In the SRC folder, these are the main files we need to understand 
 
 ##### App.tsx
-![alt text](/images/image-3.png)
+![alt text](image.png)
 This React Functional component renders a Header component, either a LeafletMap or MapBoxMap component based on the value of the MapBox state which is controlled by the button located in the Header Component.
 The Header component receives two props: setMapBox and mapBox, which are used for toggling between the map types.
 The setMapBox function is used to update the MapBox state when the user interacts with the Header component.
