@@ -38,13 +38,13 @@ this will start our React Application from the Docker container we just created 
 In the SRC folder, these are the main files we need to understand 
 
 ##### App.tsx
-![alt text](image-3.png)
+![alt text](/images/image-3.png)
 This React Functional component renders a Header component, either a LeafletMap or MapBoxMap component based on the value of the MapBox state which is controlled by the button located in the Header Component.
 The Header component receives two props: setMapBox and mapBox, which are used for toggling between the map types.
 The setMapBox function is used to update the MapBox state when the user interacts with the Header component.
 
 ##### Map.tsx
-![alt text](image-4.png)
+![alt text](/images/image.png)
 The useRef hook is used to create a reference to the map container "div" element.
 The useEffect hook is used to initialize the map when the component mounts.
 Mapbox GL JS is initialized with an access token and configured with default options such as center coordinates and zoom level.
@@ -54,13 +54,13 @@ The map.on('mouseenter') event listener is used to display a popup when hovering
 The map.on('mouseleave') event listener is used to remove the popup when the mouse leaves the marker.
 
 ##### GeoData.tsx
-![alt text](image-5.png)
+![alt text](/images/image-5.png)
 Renders a GeoJSON layer on the map with tooltips displaying information about each feature.
 Tooltip content is dynamically generated based on the properties of each GeoJSON feature.
 
 
 ##### Leaflet_Map.tsx
-![alt text](image-6.png)
+![alt text](/images/image-6.png)
 
 renders a map using the react-leaflet library
 
