@@ -1,6 +1,5 @@
 import { FeatureCollection } from 'geojson';
-import React, { useEffect, useState } from 'react'
-import { MapContainer, TileLayer, GeoJSON, Tooltip } from "react-leaflet";
+import { GeoJSON } from "react-leaflet";
 
 export default function GeoData({ dataProp }: { dataProp: FeatureCollection | null }) {
 

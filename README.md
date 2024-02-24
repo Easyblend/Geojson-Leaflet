@@ -1,10 +1,12 @@
 ## Mapping GeoJson Data On Maps
 ![alt text](image.png)
 ![alt text](image-1.png)
+![alt text](image-2.png)
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# How to Run it OPTION 1
+To run the Project you first need to install the node modules by running 
+##### npm install 
 
 ## Available Scripts
 
@@ -18,33 +20,57 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# OPTION 2 With DOCKER
 
-### `npm run build`
+First navigate into the project directory and run
+#### docker build -t kano_map .
+this will create a docker container from the docker image we have
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Next Run
+##### docker run -it -p 3000:3000 kano_map
+this will start our React Application from the Docker container we just created on the port 3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Understanding the Programming Structure
 
-### `npm run eject`
+In the SRC folder, these are the main files we need to understand 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### App.tsx
+![alt text](image-3.png)
+This React Functional component renders a Header component, either a LeafletMap or MapBoxMap component based on the value of the MapBox state which is controlled by the button located in the Header Component.
+The Header component receives two props: setMapBox and mapBox, which are used for toggling between the map types.
+The setMapBox function is used to update the MapBox state when the user interacts with the Header component.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Map.tsx
+![alt text](image-4.png)
+The map is initialized with a zoom level of 3.
+Uses a custom map style provided by MapBox URL from studio mapbox.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##### GeoData.tsx
+![alt text](image-5.png)
+Renders a GeoJSON layer on the map with tooltips displaying information about each feature.
+Tooltip content is dynamically generated based on the properties of each GeoJSON feature.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+##### Leaflet_Map.tsx
+![alt text](image-6.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+renders a map using the react-leaflet library
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I Initialize state using the useState hook to store the GeoJSON data (geoJson).
+Data Fetching:
+
+Use the useEffect hook to fetch GeoJSON data from a URL when the component mounts. The fetched data is then stored in the state variable geoJson.
+Map Rendering:
+
+Render a MapContainer component from react-leaflet with a specified center and zoom level.
+Render a TileLayer component to display the basemap using OpenStreetMap tiles.
+Rendering GeoJSON Data:
+
+Renders the GeoJSON data stored in the state variable geoJson using the GeoData component.
+Maps over the DataInfo.features and zipCodes.features arrays to render multiple GeoJSON layers on the map.
+Debugging:
+
+Logs each feature to the console for debugging purposes.
+Overall, this component fetches GeoJSON data, renders it on the map using GeoData components, and logs information about each feature for debugging purposes.

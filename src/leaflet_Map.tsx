@@ -28,16 +28,6 @@ const Map: React.FC = () => {
     }, []); // Run once on component mount
 
 
-    const LocationMarker = () => {
-        const map = useMapEvents({
-            click: (e) => {
-                const { lat, lng } = e.latlng;
-                alert(`You clicked the map at: ${lat}, ${lng}`);
-            },
-        });
-
-        return null;
-    };
 
 
     return (
@@ -68,7 +58,6 @@ const Map: React.FC = () => {
                     <GeoData key={index} dataProp={feature as any} />
                 );
             })}
-            <LocationMarker />
         </MapContainer>
 
     );
