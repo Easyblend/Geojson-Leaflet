@@ -1,7 +1,8 @@
 ## Mapping GeoJson Data On Maps
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](/images/image.png)
+![alt text](/images/image-7.png)
+![alt text](/images/image-1.png)
+![alt text](/images/image-2.png)
 
 
 # How to Run it OPTION 1
@@ -44,8 +45,13 @@ The setMapBox function is used to update the MapBox state when the user interact
 
 ##### Map.tsx
 ![alt text](image-4.png)
-The map is initialized with a zoom level of 3.
-Uses a custom map style provided by MapBox URL from studio mapbox.
+The useRef hook is used to create a reference to the map container "div" element.
+The useEffect hook is used to initialize the map when the component mounts.
+Mapbox GL JS is initialized with an access token and configured with default options such as center coordinates and zoom level.
+The map is created and added to the map container element.
+The map.on('load') event listener is used to add sources and layers to the map once it has finished loading.
+The map.on('mouseenter') event listener is used to display a popup when hovering over a marker on the map. The popup contains information about the location, such as description and image.
+The map.on('mouseleave') event listener is used to remove the popup when the mouse leaves the marker.
 
 ##### GeoData.tsx
 ![alt text](image-5.png)

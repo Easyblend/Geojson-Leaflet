@@ -32,7 +32,7 @@ const Map: React.FC = () => {
 
     return (
 
-        <MapContainer center={{ lat: 38.60593009141915, lng: -104.93865966796876 }} zoom={13} style={{ height: "94vh" }} >
+        <MapContainer center={{ lat: 38.60593009141915, lng: -104.93865966796876 }} zoom={11} style={{ height: "94vh" }} >
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright%22%3EOpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
