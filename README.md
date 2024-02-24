@@ -33,7 +33,7 @@ Next Run
 this will start our React Application from the Docker container we just created on the port 3000
 
 
-# Understanding the Programming Structure
+# Understanding the Code
 
 In the SRC folder, these are the main files we need to understand 
 
