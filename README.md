@@ -1,5 +1,5 @@
 ## Mapping GeoJson Data On Maps
-![alt text](/images/image.png)
+![alt text](image.png)
 ![alt text](/images/image-7.png)
 ![alt text](/images/image-1.png)
 ![alt text](/images/image-2.png)
@@ -38,13 +38,13 @@ this will start our React Application from the Docker container we just created 
 In the SRC folder, these are the main files we need to understand 
 
 ##### App.tsx
-![alt text](image.png)
+![alt text](/images/image-3.png)
 This React Functional component renders a Header component, either a LeafletMap or MapBoxMap component based on the value of the MapBox state which is controlled by the button located in the Header Component.
 The Header component receives two props: setMapBox and mapBox, which are used for toggling between the map types.
 The setMapBox function is used to update the MapBox state when the user interacts with the Header component.
 
 ##### Map.tsx
-![alt text](/images/image.png)
+![alt text](/images/image-4.png)
 The useRef hook is used to create a reference to the map container "div" element.
 The useEffect hook is used to initialize the map when the component mounts.
 Mapbox GL JS is initialized with an access token and configured with default options such as center coordinates and zoom level.
