@@ -1,0 +1,71 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Example Polygon 1"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -122.418,
+                            37.775
+                        ],
+                        [
+                            -122.418,
+                            37.78
+                        ],
+                        [
+                            -122.413,
+                            37.78
+                        ],
+                        [
+                            -122.413,
+                            37.775
+                        ],
+                        [
+                            -122.418,
+                            37.775
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Example Polygon 2"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -122.41,
+                            37.77
+                        ],
+                        [
+                            -122.41,
+                            37.775
+                        ],
+                        [
+                            -122.405,
+                            37.775
+                        ],
+                        [
+                            -122.405,
+                            37.77
+                        ],
+                        [
+                            -122.41,
+                            37.77
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}

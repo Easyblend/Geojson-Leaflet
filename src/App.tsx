@@ -1,17 +1,18 @@
-import React from 'react';
-import './App.css';
+import { useState } from 'react'
+import LeafletMap from './leaflet_Map'
+import Header from './Header'
+import MapBoxMap from './Map'
 
-function App() {
 
-  let name = "emma"
+export default function App() {
 
-  name = 12
+  const [MapBox, setMapBox] = useState<boolean>(false)
 
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
-  );
-}
+    <div className=' h-screen overflow-y-hidden'>
+      <Header setMapBox={setMapBox} mapBox={MapBox} />
+      {MapBox ? <LeafletMap /> : <MapBoxMap />}
 
-export default App;
+    </div>
+  )
+}
