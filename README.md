@@ -7,7 +7,7 @@
 
 # How to Run it OPTION 1
 To run the Project you first need to install the node modules by running 
-##### npm install 
+##### npm install --force
 
 ## Available Scripts
 
