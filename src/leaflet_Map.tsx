@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { FeatureCollection } from "geojson"; // Import FeatureCollection type
 import { zipCodes } from "./data/datag";
 import GeoData from "./GeoData";
+import { DataInfo } from "./data/RealData";
 
 
 const Map: React.FC = () => {
@@ -27,9 +28,21 @@ const Map: React.FC = () => {
     }, []); // Run once on component mount
 
 
+    const LocationMarker = () => {
+        const map = useMapEvents({
+            click: (e) => {
+                const { lat, lng } = e.latlng;
+                alert(`You clicked the map at: ${lat}, ${lng}`);
+            },
+        });
+
+        return null;
+    };
+
+
     return (
 
-        <MapContainer center={{ lat: 51.4884581671783, lng: 0.242357696083641 }} zoom={13} style={{ height: "94vh" }}>
+        <MapContainer center={{ lat: 51.49699574076801, lng: -0.26298522949218756 }} zoom={13} style={{ height: "94vh" }} >
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright%22%3EOpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -38,13 +51,24 @@ const Map: React.FC = () => {
             {/* Render the GeoJSON layer only when data is available */}
             <GeoData dataProp={geoJson} />
 
-            {/* Reander Geojson Data on the Map with Multiple Feature */}
-            {zipCodes.features.map((feature, index) => {
+            {DataInfo.features.map((feature, index) => {
+                console.log(feature);
+
                 return (
                     <GeoData key={index} dataProp={feature as any} />
                 );
             })}
 
+
+            {/* Reander Geojson Data on the Map with Multiple Feature */}
+            {zipCodes.features.map((feature, index) => {
+                console.log(feature);
+
+                return (
+                    <GeoData key={index} dataProp={feature as any} />
+                );
+            })}
+            <LocationMarker />
         </MapContainer>
 
     );
