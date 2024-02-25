@@ -25,13 +25,11 @@ Make sure you have nothing already running on port 3000
 To run the Project you first need to install the node modules by running 
 ###### npm install --force
 
-## Available Scripts
 
 In the project directory, you can run:
-
 ### `npm start`
 
-Runs the app in the development mode.\
+This will run the app in the development mode
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
