@@ -11,11 +11,11 @@
 Make sure you have Docker installed!
 
 First navigate into the project directory and run
-> #### `**docker image build -t kano_map .**`
+> #### `docker image build -t kano_map .`
 this will create a docker container from the docker image we have
 
 Next Run
-> #### `**docker run -it -p 3000:3000 kano_map**`
+> #### `docker run -it -p 3000:3000 kano_map`
 this will start our React Application from the Docker container we just created on the port 3000, 
 Make sure you have nothing already running on port 3000
 
@@ -23,11 +23,11 @@ Make sure you have nothing already running on port 3000
 
 ### How to Run it OPTION 2
 To run the Project you first need to install the node modules by running 
-> #### `**npm install --force**`
+> #### `npm install --force`
 
 
 In the project directory, you can run:
-> #### `**npm start**`
+> #### `npm start`
 
 This will run the app in the development mode
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
