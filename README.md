@@ -5,9 +5,25 @@
 ![alt text](/images/image-2.png)
 
 
-# How to Run it OPTION 1
+# Run the App
+
+### OPTION 1 With DOCKER
+Make sure you have Docker installed!
+
+First navigate into the project directory and run
+###### docker image build -t kano_map .
+this will create a docker container from the docker image we have
+
+Next Run
+###### docker run -it -p 3000:3000 kano_map
+this will start our React Application from the Docker container we just created on the port 3000, 
+Make sure you have nothing already running on port 3000
+
+## ----------------------------------------------------------------------------------------
+
+### How to Run it OPTION 2
 To run the Project you first need to install the node modules by running 
-##### npm install 
+###### npm install --force
 
 ## Available Scripts
 
@@ -22,16 +38,8 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 
-# OPTION 2 With DOCKER
 
-First navigate into the project directory and run
-#### docker build -t kano_map .
-this will create a docker container from the docker image we have
-
-Next Run
-##### docker run -it -p 3000:3000 kano_map
-this will start our React Application from the Docker container we just created on the port 3000
-
+## -------------------------------------------------------------------------------------
 
 # Understanding the Code
 
